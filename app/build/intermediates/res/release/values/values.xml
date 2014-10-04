@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/values/arrays.xml -->
+    <eat-comment />
+
+    <string-array name="pref_defaultViewMode_entries">
+        <item>Today</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>All time</item>
+    </string-array>
+    <string-array name="pref_defaultViewMode_values">
+        <item>day</item>
+        <item>week</item>
+        <item>month</item>
+        <item>all</item>
+    </string-array>
+    <string-array name="pref_notesToKeep_entries">
+        <item>100</item>
+        <item>200</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>all</item>
+    </string-array>
+    <string-array name="pref_notesToKeep_values">
+        <item>100</item>
+        <item>200</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>-1</item>
+    </string-array>
+    <!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="holo_blue">#ff33b5e5</color>
+    <color name="holo_blue_light">#ff98d9f1</color>
+    <color name="holo_grey">#ffbebebe</color>
+    <color name="holo_grey_light">#ff414345</color>
+    <color name="white">#ffffffff</color>
+    <!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="icon_app">25dp</dimen>
+    <dimen name="list_item_margin_horizontal_left">16dp</dimen>
+    <dimen name="list_item_margin_horizontal_right">24dp</dimen>
+    <dimen name="list_item_margin_vertical">8dp</dimen>
+    <dimen name="small_icon">25dp</dimen>
+    <!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="action_delete">Delete</string>
+    <string name="action_newFilter">New Filter</string>
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_share">Share</string>
+    <string name="activity_filters_label">Filters</string>
+    <string name="app_info_settings">App Info</string>
+    <string name="app_name">Notification Saver</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_delete_button">Delete</string>
+    <string name="confirm_delete_title">Are you sure?</string>
+    <string name="confirm_delete_warning">These notifications cannot be recovered.</string>
+    <string name="content_description_app_icon">App Icon</string>
+    <string name="content_description_small_icon">Small Icon</string>
+    <string name="dialog_newfilter_appname_hint">App</string>
+    <string name="dialog_newfilter_checkbox_exact">Exact</string>
+    <string name="dialog_newfilter_dialogtitle">New Filter</string>
+    <string name="dialog_newfilter_dialogtitle_edit">Edit Filter</string>
+    <string name="dialog_newfilter_done">Done</string>
+    <string name="dialog_newfilter_filtername_hint">Filter Name</string>
+    <string name="dialog_newfilter_nameexists_message">Filter name already exists</string>
+    <string name="dialog_newfilter_noname_message">Need a filter name</string>
+    <string name="dialog_newfilter_packagename_hint">Package</string>
+    <string name="dialog_newfilter_text_hint">Notification Text</string>
+    <string name="dialog_newfilter_title_hint">Notification Title</string>
+    <string name="export_failed">Export failed</string>
+    <string name="export_in_progress">Export in progress</string>
+    <string name="export_notification_ticker">Exporting history</string>
+    <string name="export_notification_ticker_complete">Export complete</string>
+    <string name="export_notification_title">Notification history export</string>
+    <string name="export_success">Export saved to Documents. Tap to view.</string>
+    <string name="inaccessible_storage">Storage is inaccesible</string>
+    <string name="list_item_filter_appname_default">App Name</string>
+    <string name="list_item_filter_contains">CONTAINS</string>
+    <string name="list_item_filter_filtername_default">Filter Name</string>
+    <string name="list_item_filter_matches">MATCHES</string>
+    <string name="list_item_filter_packagename_default">Package</string>
+    <string name="list_item_filter_text_default">Text</string>
+    <string name="list_item_filter_title_default">Title</string>
+    <string name="listener_not_enabled_title">No notification access</string>
+    <string name="listener_not_enabled_warning">Notification Saver requires access to your notifications in order to work. Enable now?</string>
+    <string name="no_filters">No filters have been added yet. Tap the \'+\' to add a new filter.</string>
+    <string name="notiflist_empty">No Notifications</string>
+    <string name="open_settings">Go to Settings</string>
+    <string name="play_store_link">Play Store</string>
+    <string name="pref_defaultViewMode">Default view</string>
+    <string name="pref_defaultViewMode_default">day</string>
+    <string name="pref_exportCSV">Export to CSV</string>
+    <string name="pref_exportCSV_summary">Create a CSV of all your notification history to open in any spreadsheet software</string>
+    <string name="pref_filterList">Notification filters</string>
+    <string name="pref_filterList_summary">Blacklist notifications from being saved.</string>
+    <string name="pref_notesToKeep">Notifications saved limit</string>
+    <string name="pref_notesToKeep_default">-1</string>
+    <string name="search_hint">Search notifications</string>
+    <!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="list_item_filter_filtercontent">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="list_item_filter_filtername">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+</resources>

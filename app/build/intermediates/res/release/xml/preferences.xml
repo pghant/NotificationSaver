@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ListPreference
+        android:defaultValue="@string/pref_notesToKeep_default"
+        android:dialogTitle="@string/pref_notesToKeep"
+        android:entries="@array/pref_notesToKeep_entries"
+        android:entryValues="@array/pref_notesToKeep_values"
+        android:key="pref_notesToKeep"
+        android:title="@string/pref_notesToKeep" />
+    <ListPreference
+        android:defaultValue="@string/pref_defaultViewMode_default"
+        android:dialogTitle="@string/pref_defaultViewMode"
+        android:entries="@array/pref_defaultViewMode_entries"
+        android:entryValues="@array/pref_defaultViewMode_values"
+        android:key="pref_defaultViewMode"
+        android:title="@string/pref_defaultViewMode" />
+
+    <Preference 
+        android:key="pref_filterList"
+        android:title="@string/pref_filterList"
+        android:summary="@string/pref_filterList_summary" >
+        <intent
+            android:targetClass="com.pghant.notifsaver.FiltersActivity"
+            android:targetPackage="com.pghant.notifsaver" />
+    </Preference>
+    
+    <Preference 
+        android:title="@string/pref_exportCSV"
+        android:key="pref_exportCSV" />
+
+</PreferenceScreen><!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/xml/preferences.xml -->

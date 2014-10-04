@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <!-- Icon sizes in the notification list -->
+    <dimen name="icon_app">25dp</dimen>
+    <dimen name="small_icon">25dp</dimen>
+    
+    <!-- List item margins -->
+    <dimen name="list_item_margin_horizontal_left">16dp</dimen>
+    <dimen name="list_item_margin_horizontal_right">24dp</dimen>
+    <dimen name="list_item_margin_vertical">8dp</dimen>
+
+</resources>

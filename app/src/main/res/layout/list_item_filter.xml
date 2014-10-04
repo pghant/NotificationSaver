@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_item_selector"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/list_item_margin_vertical"
+    android:paddingLeft="@dimen/list_item_margin_horizontal_left"
+    android:paddingRight="@dimen/list_item_margin_horizontal_right"
+    android:paddingTop="@dimen/list_item_margin_vertical" >
+
+    <TextView
+        android:id="@+id/list_item_filter_filtername"
+        style="@style/list_item_filter_filtername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_item_filter_filtername_default" />
+
+    <TextView
+        android:id="@+id/list_item_filter_title"
+        style="@style/list_item_filter_filtercontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_item_filter_title_default"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/list_item_filter_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_item_filter_text_default"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/list_item_filter_appname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_item_filter_appname_default"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/list_item_filter_packagename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/list_item_filter_packagename_default"
+        android:visibility="gone" />
+
+</LinearLayout>

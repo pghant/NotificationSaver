@@ -1,0 +1,11 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_fragment_container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+
+
+</FrameLayout>
+<!-- From: file:/Users/prasant/AndroidstudioProjects/NotificationSaver/app/src/main/res/layout/activity_main.xml -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/prasant/AndroidstudioProjects/NotificationSaver/app/build/intermediates/pre-dexed/debug/opencsv-2.3-44423d803236cfadfaffe76ea018ccfcc1bf9dac.jar"
+        jar="/Users/prasant/AndroidstudioProjects/NotificationSaver/app/libs/opencsv-2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="c0ffd01065bc3fe571e1a4eb7014a03333f0663d"/>
+
+</pre-dex-items>
