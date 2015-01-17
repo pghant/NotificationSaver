@@ -25,8 +25,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -197,7 +199,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 		// Inflate the menu; this adds items to the action bar if it is present.
 		inflater.inflate(R.menu.fragment_notiflist, menu);
 
-		mSearchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        mSearchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
 		mSearchView.setOnQueryTextListener(this);
 		mSearchView.setQueryHint(getResources().getText(R.string.search_hint));
 	}
