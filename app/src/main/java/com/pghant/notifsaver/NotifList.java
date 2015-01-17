@@ -6,7 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -26,6 +25,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
@@ -38,8 +38,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView.MultiChoiceModeListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.SpinnerAdapter;
+
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.SearchView;
 
 import com.pghant.notifsaver.NotifSaverContract.Filters;
 import com.pghant.notifsaver.NotifSaverContract.Notifications;
@@ -63,9 +65,9 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 		setHasOptionsMenu(true);
 
 		SpinnerAdapter mSpinnerAdapter = ArrayAdapter
-				.createFromResource(getActivity(), R.array.pref_defaultViewMode_entries,
+				.createFromResource(((ActionBarActivity) getActivity()), R.array.pref_defaultViewMode_entries,
 						android.R.layout.simple_spinner_dropdown_item);
-		getActivity().getActionBar().setListNavigationCallbacks(mSpinnerAdapter, this);
+//		((ActionBarActivity) getActivity()).getSupportActionBar().setListNavigationCallbacks(mSpinnerAdapter, this);
 
 		// if recreating the fragment, save the spinnerPos
 		if (savedInstanceState != null)
@@ -78,17 +80,17 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 
 		super.onResume();
 
-		getActivity().getActionBar().setDisplayHomeAsUpEnabled(false);
-		getActivity().getActionBar().setHomeButtonEnabled(false);
-		getActivity().getActionBar().setDisplayShowTitleEnabled(false);
-		getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+        ((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+		((ActionBarActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(false);
+		((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+//		((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 	}
 
 	@Override
 	public void onStop() {
 
-		mSpinnerPos = getActivity().getActionBar().getSelectedNavigationIndex();
-		getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+		mSpinnerPos = ((ActionBarActivity) getActivity()).getSupportActionBar().getSelectedNavigationIndex();
+//		((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 
 		super.onStop();
 	}
@@ -119,14 +121,14 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 		if (savedInstanceState != null) {
 			mSpinnerPos = savedInstanceState.getInt("savedSpinnerPos");
 		} else if (mSpinnerPos == -1) {
-			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(((ActionBarActivity) getActivity()));
 			String defaultViewPref = prefs.getString("pref_defaultViewMode", "day");
 			mSpinnerPos = getPositionStringInArray(defaultViewPref,
 					getResources().getStringArray(R.array.pref_defaultViewMode_values));
 		}
 
-		getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-		getActivity().getActionBar().setSelectedNavigationItem(mSpinnerPos);
+//		((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+//		((ActionBarActivity) getActivity()).getSupportActionBar().setSelectedNavigationItem(mSpinnerPos);
 
 		ListView list = getListView();
 		list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
@@ -184,7 +186,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 
 		});
 
-		mAdapter = new NotifCursorAdapter(getActivity(), null, 0);
+		mAdapter = new NotifCursorAdapter(((ActionBarActivity) getActivity()), null, 0);
 		setListAdapter(mAdapter);
 
 		getLoaderManager().initLoader(0, null, this);
@@ -204,7 +206,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		// case R.id.action_search:
-		// Toast.makeText(getActivity(), "Search", Toast.LENGTH_SHORT).show();
+		// Toast.makeText(((ActionBarActivity) getActivity()), "Search", Toast.LENGTH_SHORT).show();
 		// return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -263,7 +265,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 				Notifications.COLUMN_NAME_TIME, Notifications.COLUMN_NAME_REMOVED,
 				Notifications.COLUMN_NAME_APPNAME, Notifications.COLUMN_NAME_TEXT,
 				Notifications.COLUMN_NAME_FLAGS };
-		return new CursorLoader(getActivity(), Notifications.CONTENT_URI, projectionToRetrieve,
+		return new CursorLoader(((ActionBarActivity) getActivity()), Notifications.CONTENT_URI, projectionToRetrieve,
 				filter, null, null);
 	}
 
@@ -289,7 +291,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 	@Override
 	public boolean onQueryTextSubmit(String query) {
 		// hide the keyboard when the user presses the search button
-		InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(
+		InputMethodManager imm = (InputMethodManager) ((ActionBarActivity) getActivity()).getSystemService(
 				Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(getListView().getWindowToken(), 0);
 		return true;
@@ -353,7 +355,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 
 		@Override
 		protected Void doInBackground(long[]... idsAr) {
-			ContentResolver resolver = getActivity().getContentResolver();
+			ContentResolver resolver = ((ActionBarActivity) getActivity()).getContentResolver();
 			String whereIn = "";
 			for (long id : idsAr[0]) {
 				whereIn += id + ",";
@@ -372,7 +374,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 		@Override
 		protected Void doInBackground(Long... ids) {
 			long id = ids[0];
-			ContentResolver resolver = getActivity().getContentResolver();
+			ContentResolver resolver = ((ActionBarActivity) getActivity()).getContentResolver();
 			Bundle args = new Bundle();
 			String[] projection = { Notifications.COLUMN_NAME_APPNAME,
 					Notifications.COLUMN_NAME_TEXT, Notifications.COLUMN_NAME_TITLE,
@@ -414,7 +416,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 			Bundle args = getArguments();
 			final long[] ids = args.getLongArray("ids");
 
-			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			AlertDialog.Builder builder = new AlertDialog.Builder(((ActionBarActivity) getActivity()));
 
 			builder.setMessage(R.string.confirm_delete_title)
 					.setPositiveButton(R.string.action_delete,
@@ -451,7 +453,7 @@ public class NotifList extends ListFragment implements LoaderManager.LoaderCallb
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 			Bundle args = getArguments();
-			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			AlertDialog.Builder builder = new AlertDialog.Builder(((ActionBarActivity) getActivity()));
 			String message = getMessage(args);
 
 			final String pkg = args.getString(Notifications.COLUMN_NAME_PACKAGE);

@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Notification Saver</string>
+    <string name="action_bar_toolbar_title">Notifications</string>
     <string name="activity_filters_label">Filters</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>

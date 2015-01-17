@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,10 +22,10 @@ public class SettingsFragment extends PreferenceFragment {
 		super.onCreate(savedInstanceState);
 		
 		setHasOptionsMenu(true);
-		getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActivity().getActionBar().setTitle(R.string.action_settings);
-		getActivity().getActionBar().setDisplayShowTitleEnabled(true);
-		getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        ((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(R.string.action_settings);
+        ((ActionBarActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(true);
+//        ((ActionBarActivity) getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 		
 		// load preferences from xml file
 		addPreferencesFromResource(R.xml.preferences);

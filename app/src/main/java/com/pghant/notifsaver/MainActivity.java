@@ -14,10 +14,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
 	public static final String TAG = "MainActivity";
 
@@ -32,6 +34,9 @@ public class MainActivity extends Activity {
 		// test clear SharedPreferences pref_filterNames
 		//SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		//prefs.edit().remove(SettingsFragment.PREF_FILTERNAMES).commit();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.action_bar_toolbar_main);
+        setSupportActionBar(toolbar);
 
 		FragmentManager fm = getFragmentManager();
 		FragmentTransaction ft = fm.beginTransaction();

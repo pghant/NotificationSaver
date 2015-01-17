@@ -1,18 +1,18 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "20.0.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
         applicationId "com.pghant.notifsaver"
         minSdkVersion 19
-        targetSdkVersion 19
+        targetSdkVersion 21
     }
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -20,4 +20,5 @@ android {
 
 dependencies {
     compile files('libs/opencsv-2.3.jar')
+    compile "com.android.support:appcompat-v7:21.0.+"
 }
