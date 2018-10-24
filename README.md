@@ -1,6 +1,8 @@
 NotificationSaver
 =================
 
+**THIS PROJECT IS NO LONGER ACTIVELY MAINTAINED**
+
 An Android application to log and search through notification history.
 
 Download from Google Play at: https://play.google.com/store/apps/details?id=com.pghant.notifsaver
